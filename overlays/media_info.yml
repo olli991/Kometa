@@ -68,7 +68,13 @@ external_templates:
               - Plus
               - DV-HDR
               - DV-Plus
+              - AAC
+              - FLAC
+              - MP3
+              - OPUS
+              - Digital
               - DigitalPlus
+              - DTS
               - DTS-HD
               - DTS-X
               - Atmos
@@ -76,7 +82,13 @@ external_templates:
               - TrueHD-Atmos
           - type: video
             value:
+              - AAC
+              - FLAC
+              - MP3
+              - OPUS
+              - Digital
               - DigitalPlus
+              - DTS
               - DTS-HD
               - DTS-X
               - Atmos
@@ -127,7 +139,13 @@ templates:
   codec_info:
     conditionals:
       regex:
-        conditions:
+        conditions:   
+          - key: DV
+            value: '(?i)\bDV\b(?!.*HDR)'
+          - key: HDR
+            value: '(?i)\bHDR10\b'
+          - key: Plus
+            value: '(?i)\bHDR10Plus\b'
           - key: AAC
             value: '(?i)\bAAC[ .](?:[57]\.1|2\.0)\b'
           - key: FLAC
@@ -135,15 +153,9 @@ templates:
           - key: MP3
             value: '(?i)\bMP3[ .]2\.0\b'  
           - key: OPUS
-            value: '(?i)\bOPUS[ .][57]\.1\b'  
-          - key: AC3
-            value: '(?i)\bAC3[ .](?:[57]\.1|2\.0)\b'    
-          - key: DV
-            value: '(?i)\bDV\b(?!.*HDR)'
-          - key: HDR
-            value: '(?i)\bHDR10\b'
-          - key: Plus
-            value: '(?i)\bHDR10Plus\b'
+            value: '(?i)\bOPUS[ .][57]\.1\b'    
+          - key: Digital
+            value: '(?i)\bAC3[ .](?:[57]\.1|2\.0)\b'   
           - key: DigitalPlus
             value: '(?i)\bEAC3[ .](?:[57]\.1|2\.0)\b'
           - key: DTS
@@ -347,7 +359,7 @@ overlays:
   gradient_bottom:
     variables: { key: gradient_bottom }
     template: [ name: backdrop ]
-
+    
   AAC:
     variables: { key: AAC, weight: 210, type: audio }
     template: [ name: standard, name: codec_info ]
@@ -360,9 +372,6 @@ overlays:
   OPUS:
     variables: { key: OPUS, weight: 213, type: audio }
     template: [ name: standard, name: codec_info ]   
-  AC3:
-    variables: { key: AC3, weight: 214, type: audio }
-    template: [ name: standard, name: codec_info ] 
   DV:
     variables: { key: DV, weight: 220, type: video }
     template: [ name: standard, name: codec_info ]
@@ -378,11 +387,14 @@ overlays:
   DV-Plus:
     variables: { key: DV-Plus, weight: 260, type: video }
     template: [ name: standard, name: codec_info ]
+  Digital:
+    variables: { key: Digital, weight: 269, type: audio }
+    template: [ name: standard, name: codec_info ]   
   DigitalPlus:
     variables: { key: DigitalPlus, weight: 270, type: audio }
     template: [ name: standard, name: codec_info ]
   DTS:
-    variables: { key: DTS, weight: 215, type: audio }
+    variables: { key: DTS, weight: 279, type: audio }
     template: [ name: standard, name: codec_info ]   
   DTS-HD:
     variables: { key: DTS-HD, weight: 280, type: audio }
