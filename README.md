@@ -33,6 +33,13 @@ Below is an example of what this builder will create.
 >
 > [https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#plex](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#plex)
 
+Movies:<br>
+<img width="922" height="384" alt="image" src="https://github.com/user-attachments/assets/7c57d138-5827-4076-846f-f6c5da6fa61a" />
+<br>
+Series:<br>
+<img width="917" height="383" alt="image" src="https://github.com/user-attachments/assets/f433fb65-f00e-47c7-8b26-ba4fdefaebdd" />
+
+Original 
 ![Overlay Example](https://i.imgur.com/xgEv2Oe.png)
 
 ## Currently supported overlay images in all combinations
