@@ -5,11 +5,12 @@
 
 ## Adjustments by olli991
 
-- extended the resolutions with `720P` and `SD` (for sub 720p stuff) 
-- added two more colors from toovirals fork 
+- extended the resolutions with `720P` and `SD` (for sub 720p stuff)
+- added two more colors from ![toovirals fork](https://github.com/tooviral/Kometa-custom-overlays)
+- added text for status of TV Shows (Airing, Ended, Canceled, Returning)
+- added flags from ![Craftwork2720](https://github.com/Craftwork2720/pmm-rating-and-subtitle-flag-for-movies) inspired by ![gravelfreemans](https://github.com/gravelfreeman/kometa-posters?tab=readme-ov-file) fork but changed it into two language support and display on the left and right of the rating. Resized the flags to fit it.
 
-
-Collection of my custom overlay builders for Kometa
+Changes are editied into sections below.
 
 ## audience_rating.yml
 
@@ -77,8 +78,54 @@ Any standard template variables are available as well, such as `builder_level`
 Use it as intended
 ```yml
 overlay_files:
-  - file: config/overlays/media_info.yml
-  - file: config/overlays/audience_rating.yml
+  - file: config/overlays/media_info.yml        # modified with SD support
+  - file: config/overlays/audience_rating.yml   # modified with the two extra colors
+  # Adding tv show status overlay and colors
+  - default: status            
+        template_variables:
+          text_airing: "LÄUFT AKTUELL"
+          text_returning: "KOMMT ZURÜCK"
+          text_canceled: "ABGESETZT"
+          text_ended: "BEENDET"
+          horizontal_align: center
+          vertical_align: top
+          vertical_offset: 30
+          back_color: "#FFFFFF00"
+          font: config/overlays/fonts/AvenirNextLTPro-Bold.ttf
+          font_size: 60
+          font_color_airing: "#2D8B2D"
+          font_color_returning: "#5CB85C"
+          font_color_canceled: "#E23133"
+          font_color_ended: "#FFFFFF"
+      # Adding langugage flags besides the rating overlay
+      - default: languages            
+        template_variables:
+          languages:
+            - de                  # First language - left to the rating overlay
+          use_subtitles: false
+          file: config/overlays/flags/<<key>>.png
+          hide_text: true
+          back_width: 40
+          back_height: 80
+          back_color: "#FFFFFF00"
+          horizontal_offset: 179
+          horizontal_align: right
+          vertical_offset: 50
+          vertical_align: bottom
+      - default: languages
+        template_variables:
+          languages:
+            - en                  # Second language - right to the rating overlay
+          use_subtitles: false
+          file: config/overlays/flags/mirrored/<<key>>.png
+          hide_text: true
+          back_width: 40
+          back_height: 80
+          back_color: "#FFFFFF00"
+          horizontal_offset: 22
+          horizontal_align: right
+          vertical_offset: 50
+          vertical_align: bottom 
 ```
 
 Disable audio
