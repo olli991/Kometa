@@ -104,6 +104,18 @@ external_templates:
           - type: edition
             res: 1080p
             value: 202
+          - type: edition
+            res: 720p
+            value: 251
+          - type: edition
+            res: 576p
+            value: 184
+          - type: edition
+            res: 480p
+            value: 184    
+          - type: edition
+            res: SD
+            value: 184
       group:
         conditions:
           - type: [resolution, edition]
@@ -216,6 +228,14 @@ templates:
               - <<key>>
       resolution:
         conditions:
+          - key: SD
+            value: SD
+          - key: 480P
+            value: 480p
+          - key: 576P
+            value: 576p    
+          - key: 720P
+            value: 720p
           - key: 1080P
             value: 1080p
           - key: Ultra-HD
@@ -440,12 +460,244 @@ overlays:
     variables: { key: DV-Plus-TrueHD-Atmos, weight: 550, type: combined }
     template: [ name: standard, name: codec_info ]
 
+  SD:
+    variables: { key: SD, weight: 450, type: resolution }
+    template: [ name: standard, name: resolution_info ]
+  480P:
+    variables: { key: 480P, weight: 460, type: resolution }
+    template: [ name: standard, name: resolution_info ]
+  576P:
+    variables: { key: 576P, weight: 470, type: resolution }
+    template: [ name: standard, name: resolution_info ]    
+  720P:
+    variables: { key: 720P, weight: 480, type: resolution }
+    template: [ name: standard, name: resolution_info ]
   1080P:
     variables: { key: 1080P, weight: 490, type: resolution }
     template: [ name: standard, name: resolution_info ]
   Ultra-HD:
     variables: { key: Ultra-HD, weight: 500, type: resolution }
     template: [ name: standard, name: resolution_info ]
+
+  IMAX-SD:
+    variables: { key: IMAX, res: SD, weight: 420, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Unrated-Edition-SD:
+    variables: { key: Unrated-Edition, res: SD, weight: 430, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Directors-Cut-SD:
+    variables: { key: Directors-Cut, res: SD, weight: 440, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Special-Edition-SD:
+    variables: { key: Special-Edition, res: SD, weight: 450, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Anniversary-Edition-SD:
+    variables: { key: Anniversary-Edition, res: SD, weight: 460, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Collectors-Edition-SD:
+    variables: { key: Collectors-Edition, res: SD, weight: 470, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Minus-Color-SD:
+    variables: { key: Minus-Color, res: SD, weight: 480, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Extended-Cut-SD:
+    variables: { key: Extended-Cut, res: SD, weight: 490, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Extended-Edition-SD:
+    variables: { key: Extended-Edition, res: SD, weight: 500, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Open-Matte-SD:
+    variables: { key: Open-Matte, res: SD, weight: 510, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Final-Cut-SD:
+    variables: { key: Final-Cut, res: SD, weight: 520, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Remastered-SD:
+    variables: { key: Remastered, res: SD, weight: 530, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Restored-SD:
+    variables: { key: Restored, res: SD, weight: 540, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Signature-Edition-SD:
+    variables: { key: Signature-Edition, res: SD, weight: 550, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Theatrical-SD:
+    variables: { key: Theatrical, res: SD, weight: 560, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Theatrical-Cut-SD:
+    variables: { key: Theatrical-Cut, res: SD, weight: 570, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Uncut-SD:
+    variables: { key: Uncut, res: SD, weight: 580, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Ultimate-Edition-SD:
+    variables: { key: Ultimate-Edition, res: SD, weight: 590, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  
+  IMAX-480P:
+    variables: { key: IMAX, res: 480P, weight: 420, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Unrated-Edition-480P:
+    variables: { key: Unrated-Edition, res: 480P, weight: 430, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Directors-Cut-480P:
+    variables: { key: Directors-Cut, res: 480P, weight: 440, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Special-Edition-480P:
+    variables: { key: Special-Edition, res: 480P, weight: 450, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Anniversary-Edition-480P:
+    variables: { key: Anniversary-Edition, res: 480P, weight: 460, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Collectors-Edition-480P:
+    variables: { key: Collectors-Edition, res: 480P, weight: 470, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Minus-Color-480P:
+    variables: { key: Minus-Color, res: 480P, weight: 480, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Extended-Cut-480P:
+    variables: { key: Extended-Cut, res: 480P, weight: 490, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Extended-Edition-480P:
+    variables: { key: Extended-Edition, res: 480P, weight: 500, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Open-Matte-480P:
+    variables: { key: Open-Matte, res: 480P, weight: 510, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Final-Cut-480P:
+    variables: { key: Final-Cut, res: 480P, weight: 520, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Remastered-480P:
+    variables: { key: Remastered, res: 480P, weight: 530, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Restored-480P:
+    variables: { key: Restored, res: 480P, weight: 540, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Signature-Edition-480P:
+    variables: { key: Signature-Edition, res: 480P, weight: 550, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Theatrical-480P:
+    variables: { key: Theatrical, res: 480P, weight: 560, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Theatrical-Cut-480P:
+    variables: { key: Theatrical-Cut, res: 480P, weight: 570, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Uncut-480P:
+    variables: { key: Uncut, res: 480P, weight: 580, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Ultimate-Edition-480P:
+    variables: { key: Ultimate-Edition, res: 480P, weight: 590, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+
+  IMAX-576P:
+    variables: { key: IMAX, res: 576P, weight: 420, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Unrated-Edition-576P:
+    variables: { key: Unrated-Edition, res: 576P, weight: 430, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Directors-Cut-576P:
+    variables: { key: Directors-Cut, res: 576P, weight: 440, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Special-Edition-576P:
+    variables: { key: Special-Edition, res: 576P, weight: 450, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Anniversary-Edition-576P:
+    variables: { key: Anniversary-Edition, res: 576P, weight: 460, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Collectors-Edition-576P:
+    variables: { key: Collectors-Edition, res: 576P, weight: 470, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Minus-Color-576P:
+    variables: { key: Minus-Color, res: 576P, weight: 480, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Extended-Cut-576P:
+    variables: { key: Extended-Cut, res: 576P, weight: 490, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Extended-Edition-576P:
+    variables: { key: Extended-Edition, res: 576P, weight: 500, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Open-Matte-576P:
+    variables: { key: Open-Matte, res: 576P, weight: 510, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Final-Cut-576P:
+    variables: { key: Final-Cut, res: 576P, weight: 520, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Remastered-576P:
+    variables: { key: Remastered, res: 576P, weight: 530, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Restored-576P:
+    variables: { key: Restored, res: 576P, weight: 540, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Signature-Edition-576P:
+    variables: { key: Signature-Edition, res: 576P, weight: 550, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Theatrical-576P:
+    variables: { key: Theatrical, res: 576P, weight: 560, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Theatrical-Cut-576P:
+    variables: { key: Theatrical-Cut, res: 576P, weight: 570, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Uncut-576P:
+    variables: { key: Uncut, res: 576P, weight: 580, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Ultimate-Edition-576P:
+    variables: { key: Ultimate-Edition, res: 576P, weight: 590, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]  
+
+  IMAX-720p:
+    variables: { key: IMAX, res: 720p, weight: 420, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Unrated-Edition-720p:
+    variables: { key: Unrated-Edition, res: 720p, weight: 430, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Directors-Cut-720p:
+    variables: { key: Directors-Cut, res: 720p, weight: 440, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Special-Edition-720p:
+    variables: { key: Special-Edition, res: 720p, weight: 450, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Anniversary-Edition-720p:
+    variables: { key: Anniversary-Edition, res: 720p, weight: 460, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Collectors-Edition-720p:
+    variables: { key: Collectors-Edition, res: 720p, weight: 470, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Minus-Color-720p:
+    variables: { key: Minus-Color, res: 720p, weight: 480, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Extended-Cut-720p:
+    variables: { key: Extended-Cut, res: 720p, weight: 490, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Extended-Edition-720p:
+    variables: { key: Extended-Edition, res: 720p, weight: 500, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Open-Matte-720p:
+    variables: { key: Open-Matte, res: 720p, weight: 510, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Final-Cut-720p:
+    variables: { key: Final-Cut, res: 720p, weight: 520, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Remastered-720p:
+    variables: { key: Remastered, res: 720p, weight: 530, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Restored-720p:
+    variables: { key: Restored, res: 720p, weight: 540, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Signature-Edition-720p:
+    variables: { key: Signature-Edition, res: 720p, weight: 550, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Theatrical-720p:
+    variables: { key: Theatrical, res: 720p, weight: 560, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Theatrical-Cut-720p:
+    variables: { key: Theatrical-Cut, res: 720p, weight: 570, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Uncut-720p:
+    variables: { key: Uncut, res: 720p, weight: 580, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
+  Ultimate-Edition-720p:
+    variables: { key: Ultimate-Edition, res: 720p, weight: 590, allowed_libraries: movie, type: edition }
+    template: [ name: standard, name: edition_info ]
 
   IMAX-1080p:
     variables: { key: IMAX, res: 1080p, weight: 420, allowed_libraries: movie, type: edition }

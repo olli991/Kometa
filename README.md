@@ -1,5 +1,14 @@
 # Kometa
 
+> [!NOTE]
+> All credit goes to jmxd for creating the base presets of the overlays.
+
+## Adjustments by olli991
+
+- extended the resolutions with `720P` and `SD` (for sub 720p stuff) 
+- added two more colors from toovirals fork 
+
+
 Collection of my custom overlay builders for Kometa
 
 ## audience_rating.yml
@@ -28,10 +37,10 @@ Below is an example of what this builder will create.
 | -           | -                   | -                     | -                  |
 | 2160p (4K)  | Anniversary Edition | HDR                   | Dolby Digital Plus |
 | 1080p (HD)  | Collector's Edition | HDR10+                | DTS-HD MA          |
-|             | Director's Cut      | Dolby Vision          | DTS-X              |
-|             | Extended Cut        | Dolby Vision + HDR    | Dolby Atmos        |
-|             | Extended Edition    | Dolby Vision + HDR10+ | Dolby TrueHD       |
-|             | IMAX / (Enhanced)   |                       | Dolby TrueHD Atmos |
+| 720p (720P) | Director's Cut      | Dolby Vision          | DTS-X              |
+| 576p (SD)   | Extended Cut        | Dolby Vision + HDR    | Dolby Atmos        |
+| 480p (SD)   | Extended Edition    | Dolby Vision + HDR10+ | Dolby TrueHD       |
+| SD (SD)     | IMAX / (Enhanced)   |                       | Dolby TrueHD Atmos |
 |             | Minus Color         |                       |                    |
 |             | Special Edition     |                       |                    |
 |             | Unrated Edition     |                       |                    |
