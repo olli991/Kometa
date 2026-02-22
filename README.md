@@ -45,10 +45,11 @@ Below is an example of what this builder will create.
 | 576p (SD)   | Extended Cut        | Dolby Vision + HDR    | Dolby Atmos        |
 | 480p (SD)   | Extended Edition    | Dolby Vision + HDR10+ | Dolby TrueHD       |
 | SD (SD)     | IMAX / (Enhanced)   |                       | Dolby TrueHD Atmos |
-|             | Minus Color         |                       |                    |
-|             | Special Edition     |                       |                    |
-|             | Unrated Edition     |                       |                    |
-|             | ... & more          |                       |                    |
+|             | Minus Color         |                       | FLAC               |
+|             | Special Edition     |                       | AAC                |
+|             | Unrated Edition     |                       | OPUS               |
+|             |                     |                       | MP3                |
+|             | ... & more          |                       | DTS 5.1            |
 
 > [!NOTE]
 > Dolby Vision with HDR/HDR10+ fallback support is correctly detected and matched separately from exclusive DV, but only Dolby Vision will be visibly shown for those files. See examples at the bottom for an alternative option.
