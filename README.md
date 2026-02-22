@@ -1,20 +1,24 @@
-# Kometa
+# Kometa Overlay for Movies and TV SHows
 
 > [!NOTE]
 > All credit goes to jmxd for creating the base presets of the overlays.
+> toovirals for the additional colors
+> Craftworks2720 for his work on flags and the according implementation
+>
+> This fork combines all this into one solution
 
 ## Adjustments by olli991
 
 - extended the resolutions with `720P` and `SD` (for sub 720p stuff)
-- added two more colors from ![toovirals fork](https://github.com/tooviral/Kometa-custom-overlays)
+- added two more colors from [toovirals fork](https://github.com/tooviral/Kometa-custom-overlays)
 - added text for status of TV Shows (Airing, Ended, Canceled, Returning)
-- added flags from ![Craftwork2720](https://github.com/Craftwork2720/pmm-rating-and-subtitle-flag-for-movies) inspired by ![gravelfreemans](https://github.com/gravelfreeman/kometa-posters?tab=readme-ov-file) fork but changed it into two language support and display on the left and right of the rating. Resized the flags to fit it.
+- added flags from [Craftwork2720](https://github.com/Craftwork2720/pmm-rating-and-subtitle-flag-for-movies) inspired by [gravelfreemans fork](https://github.com/gravelfreeman/kometa-posters?tab=readme-ov-file) but changed it into two language support and display on the left and right of the rating. Resized the flags to fit it.
 
 Changes are editied into sections below.
 
 ## audience_rating.yml
 
-This file will create an overlay showing the current audience rating value in PLEX. Ratings of 8 or higher are green, 6 or higher are yellow and anything lower will be red.
+This file will create an overlay showing the current audience rating value in PLEX. Ratings of 9 or higher are dark green, 7.5 or higher are light green, 6.5 or higher are yellow,  5 and or higher are orange and anything lower will be red.
 
 ## media_info.yml
 
@@ -27,12 +31,11 @@ Below is an example of what this builder will create.
 > [!IMPORTANT]
 > For this template to work correctly you MUST use the TRaSH naming convention for your file names.
 >
-> https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#plex
-
+> [https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#plex](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/#plex)
 
 ![Overlay Example](https://i.imgur.com/xgEv2Oe.png)
 
-## Currently supported overlay images in all combinations:
+## Currently supported overlay images in all combinations
 
 | Resolutions | Editions            | Video Formats         | Audio Formats      |
 | -           | -                   | -                     | -                  |
@@ -48,12 +51,12 @@ Below is an example of what this builder will create.
 |             | ... & more          |                       |                    |
 
 > [!NOTE]
-> Only "High Quality" formats are intended to be supported.
->
 > Dolby Vision with HDR/HDR10+ fallback support is correctly detected and matched separately from exclusive DV, but only Dolby Vision will be visibly shown for those files. See examples at the bottom for an alternative option.
 
-### Available template variables:
+### Available template variables
+
 ----------
+
 #### Exclusive use
 
 `video_only` `audio_only` `resolution_only` `edition_only`
@@ -61,9 +64,10 @@ Below is an example of what this builder will create.
 Set to `true` to only apply this specific type of overlay.
 
 #### Disable specific overlays
+
 `use_<<type>>` e.g. `use_audio`
 
-Set to `false` to disable this type of overlay (combined, video, audio, resolution, edition) 
+Set to `false` to disable this type of overlay (combined, video, audio, resolution, edition)
 
 > [!IMPORTANT]
 > To disable audio or video you must set `use_combined` to `false` as well.
@@ -75,7 +79,9 @@ Set to `false` to disable the backdrops
 Any standard template variables are available as well, such as `builder_level`
 
 ## Examples
+
 Use it as intended
+
 ```yml
 overlay_files:
   - file: config/overlays/media_info.yml        # modified with SD support
@@ -129,6 +135,7 @@ overlay_files:
 ```
 
 Disable audio
+
 ```yml
 overlay_files:
   - file: config/overlays/media_info.yml
@@ -137,6 +144,7 @@ overlay_files:
       use_audio: false
   - file: config/overlays/audience_rating.yml
 ```
+
 Only apply video formats and change the images for these two overlays to also show the fallback format. Then, only show audio, and move it to the right
 
 ```yml
@@ -156,6 +164,7 @@ overlay_files:
       use_gradient_bottom: false
       horizontal_align: right
 ```
+
 > [!IMPORTANT]
 > When running the overlay file multiple times on the same library like the above example, make sure to disable both gradients on subsequent uses or it will apply them again.
 
