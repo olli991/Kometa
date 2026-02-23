@@ -13,6 +13,8 @@
 - added two more colors from [toovirals fork](https://github.com/tooviral/Kometa-custom-overlays)
 - added text for status of TV Shows (Airing, Ended, Canceled, Returning)
 - added flags from [Craftwork2720](https://github.com/Craftwork2720/pmm-rating-and-subtitle-flag-for-movies) inspired by [gravelfreemans fork](https://github.com/gravelfreeman/kometa-posters?tab=readme-ov-file) but changed it into two language support and display on the left and right of the rating. Resized the flags to fit it.
+- added additional audio codecs from [shivam183s fork](https://github.com/shivam183/Kometa/tree/local-main). Adjusted some of the images and implementeded it into the current regex.
+- added the generation of overlays for season posters and episodes. Episodes also with langugage flags besides the rating.
 
 Changes are editied into sections below.
 
@@ -56,7 +58,8 @@ Original
 |             | Special Edition     |                       | AAC                |
 |             | Unrated Edition     |                       | OPUS               |
 |             |                     |                       | MP3                |
-|             | ... & more          |                       | DTS 5.1            |
+|             |                     |                       | DTS 5.1            |
+|             | ... & more          |                       | Dolby Digital      |
 
 > [!NOTE]
 > Dolby Vision with HDR/HDR10+ fallback support is correctly detected and matched separately from exclusive DV, but only Dolby Vision will be visibly shown for those files. See examples at the bottom for an alternative option.
@@ -94,6 +97,12 @@ Use it as intended
 overlay_files:
   - file: config/overlays/media_info.yml        # modified with SD support
   - file: config/overlays/audience_rating.yml   # modified with the two extra colors
+```
+
+Using additional tv shows status overlay
+
+```yml
+overlay_files:
   # Adding tv show status overlay and colors
   - default: status            
     template_variables:
@@ -111,6 +120,12 @@ overlay_files:
       font_color_returning: "#5CB85C"
       font_color_canceled: "#E23133"
       font_color_ended: "#FFFFFF"
+```
+
+Using additional language flags besides the audience rating on movies and tv shows
+
+```yml
+overlay_files:
   # Adding langugage flags besides the rating overlay
   - default: languages            
     template_variables:
@@ -140,6 +155,61 @@ overlay_files:
       horizontal_align: right
       vertical_offset: 50
       vertical_align: bottom 
+```
+
+Also applying overlays to tv show seasons and episodes
+
+```yml
+overlay_files:
+  # Also appling the same overlays to episodes
+  - file: /config/overlays/media_info.yml 
+    template_variables:
+      builder_level: episode
+  - file: /config/overlays/audience_rating.yml 
+    template_variables:
+      builder_level: episode
+  
+  # Also appling the same overlays to seasons
+  - file: /config/overlays/media_info.yml 
+    template_variables:
+      builder_level: season     
+```
+
+Also applying language flags to tv show episode ratings
+
+```yml
+overlay_files:
+# Also adding the langugage flags besides the rating overlay in episodes
+  - default: languages            
+    template_variables:
+      builder_level: episode
+      languages:
+        - de                  # First language - left to the rating overlay
+      use_subtitles: false
+      file: config/overlays/flags/<<key>>.png
+      hide_text: true
+      back_width: 40
+      back_height: 80
+      back_color: "#FFFFFF00"
+      horizontal_offset: 179
+      horizontal_align: right
+      vertical_offset: 50
+      vertical_align: bottom
+  - default: languages
+    template_variables:
+      builder_level: episode
+      languages:
+        - en                  # Second language - right to the rating overlay
+      use_subtitles: false
+      file: config/overlays/flags/mirrored/<<key>>.png
+      hide_text: true
+      back_width: 40
+      back_height: 80
+      back_color: "#FFFFFF00"
+      horizontal_offset: 22
+      horizontal_align: right
+      vertical_offset: 50
+      vertical_align: bottom   
 ```
 
 Disable audio
