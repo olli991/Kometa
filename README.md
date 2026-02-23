@@ -3,7 +3,7 @@
 > [!NOTE]
 > All credit goes to jmxd for creating the base presets of the overlays.
 >
-> This fork combines several additions this into one
+> This fork combines several additions into one
 
 ## Adjustments by olli991
 
