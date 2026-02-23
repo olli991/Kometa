@@ -359,34 +359,35 @@ overlays:
   gradient_bottom:
     variables: { key: gradient_bottom }
     template: [ name: backdrop ]
-    
-  AAC:
-    variables: { key: AAC, weight: 210, type: audio }
-    template: [ name: standard, name: codec_info ]
-  FLAC:
-    variables: { key: FLAC, weight: 211, type: audio }
-    template: [ name: standard, name: codec_info ]   
-  MP3:
-    variables: { key: MP3, weight: 212, type: audio }
-    template: [ name: standard, name: codec_info ]   
-  OPUS:
-    variables: { key: OPUS, weight: 213, type: audio }
-    template: [ name: standard, name: codec_info ]   
+
+  
   DV:
-    variables: { key: DV, weight: 220, type: video }
+    variables: { key: DV, weight: 180, type: video }
     template: [ name: standard, name: codec_info ]
   HDR:
-    variables: { key: HDR, weight: 230, type: video }
+    variables: { key: HDR, weight: 190, type: video }
     template: [ name: standard, name: codec_info ]
   Plus:
-    variables: { key: Plus, weight: 240, type: video }
+    variables: { key: Plus, weight: 200, type: video }
     template: [ name: standard, name: codec_info ]
   DV-HDR:
-    variables: { key: DV-HDR, weight: 250, type: video }
+    variables: { key: DV-HDR, weight: 210, type: video }
     template: [ name: standard, name: codec_info ]
   DV-Plus:
-    variables: { key: DV-Plus, weight: 260, type: video }
+    variables: { key: DV-Plus, weight: 220, type: video }
     template: [ name: standard, name: codec_info ]
+  AAC:
+    variables: { key: AAC, weight: 230, type: audio }
+    template: [ name: standard, name: codec_info ]
+  FLAC:
+    variables: { key: FLAC, weight: 240, type: audio }
+    template: [ name: standard, name: codec_info ]   
+  MP3:
+    variables: { key: MP3, weight: 250, type: audio }
+    template: [ name: standard, name: codec_info ]   
+  OPUS:
+    variables: { key: OPUS, weight: 260, type: audio }
+    template: [ name: standard, name: codec_info ]     
   Digital:
     variables: { key: Digital, weight: 269, type: audio }
     template: [ name: standard, name: codec_info ]   
