@@ -38,8 +38,16 @@ Below is an example of what this builder will create.
 Movies:<br>
 <img width="922" height="384" alt="image" src="https://github.com/user-attachments/assets/7c57d138-5827-4076-846f-f6c5da6fa61a" />
 <br>
+<br>
 Series:<br>
 <img width="917" height="383" alt="image" src="https://github.com/user-attachments/assets/f433fb65-f00e-47c7-8b26-ba4fdefaebdd" />
+<br>
+Seasons:<br>
+<img width="466" height="389" alt="image" src="https://github.com/user-attachments/assets/55db7320-abe2-455f-84b2-e56597d0ecc8" />
+<br>
+Episodes:<br>
+<img width="459" height="316" alt="image" src="https://github.com/user-attachments/assets/8b9ab32d-3177-4e29-8ca0-4301a956700f" />
+
 
 Original 
 ![Overlay Example](https://i.imgur.com/xgEv2Oe.png)
