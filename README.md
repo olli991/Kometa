@@ -2,10 +2,8 @@
 
 > [!NOTE]
 > All credit goes to jmxd for creating the base presets of the overlays.
-> toovirals for the additional colors.
-> And Craftworks2720 for his work on flags and the according implementation.
 >
-> This fork combines all this into one solution
+> This fork combines several additions into one
 
 ## Adjustments by olli991
 
