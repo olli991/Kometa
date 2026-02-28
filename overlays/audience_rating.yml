@@ -11,6 +11,8 @@ templates:
     conditionals:
       files:
         conditions:
+          - key: audience_score_highest_none_backdrop
+            value: config/overlays/images/audience_score/audience_score_none.png 
           - key: audience_score_highest_backdrop
             value: config/overlays/images/audience_score/audience_score_highest.png
           - key: audience_score_high_backdrop
@@ -21,11 +23,11 @@ templates:
             value: config/overlays/images/audience_score/audience_score_mid_low.png  
           - key: audience_score_low_backdrop
             value: config/overlays/images/audience_score/audience_score_low.png
-          - key: audience_score_none_backdrop
+          - key: audience_score_low_none_backdrop
             value: config/overlays/images/audience_score/audience_score_none.png  
       audience_rating.gte:
         conditions:
-          - key: [audience_score_highest_none, audience_score_none_backdrop]
+          - key: [audience_score_highest_none, audience_score_highest_none_backdrop]
             value: 10.0
           - key: [audience_score_highest, audience_score_highest_backdrop]
             value: 9.0
@@ -37,7 +39,7 @@ templates:
             value: 5.0
           - key: [audience_score_low, audience_score_low_backdrop]
             value: 0.1
-          - key: [audience_score_low_none, audience_score_none_backdrop]
+          - key: [audience_score_low_none, audience_score_low_none_backdrop]
             value: 0  
       names:
         default: <<overlay_name>>
@@ -70,9 +72,12 @@ templates:
       font_size: 68
 
 overlays:  
+  audience_score_highest_none_backdrop:
+    variables: { key: audience_score_highest_none_backdrop, weight: 800, group: backdrop }
+    template: [ name: audience_score ]  
   audience_score_highest_backdrop:
     variables: { key: audience_score_highest_backdrop, weight: 700, group: backdrop }
-    template: [ name: audience_score ]
+    template: [ name: audience_score ]   
   audience_score_high_backdrop:
     variables: { key: audience_score_high_backdrop, weight: 600, group: backdrop }
     template: [ name: audience_score ]
@@ -86,8 +91,9 @@ overlays:
     variables: { key: audience_score_low_backdrop, weight: 300, group: backdrop }
     template: [ name: audience_score ]
   audience_score_none_backdrop:
-    variables: { key: audience_score_none_backdrop, weight: 200, group: backdrop }
-    template: [ name: audience_score ]    
+    variables: { key: audience_score_low_none_backdrop, weight: 200, group: backdrop }
+    template: [ name: audience_score ]
+
   audience_score_highest_none:
     variables: { key: audience_score_highest_none, weight: 800, group: score }
     template: [ name: audience_score ]
