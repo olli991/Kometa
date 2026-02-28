@@ -161,7 +161,7 @@ templates:
           - key: DTS
             value: '(?i)\bDTS[ .][57]\.1\b'
           - key: DTS-HD
-            value: '(?i)\bDTS-HD[ .]MA[ .][57]\.1\b'
+            value: '(?i)\bDTS-HD[ .](?:MA|HRA)[ .][57]\.1\b'
           - key: DTS-X
             value: '(?i)\bDTS-X[ .][57]\.1\b'
           - key: TrueHD
@@ -174,26 +174,51 @@ templates:
             value: '(?i)\bDV[ .]HDR10\b'
           - key: DV-Plus
             value: '(?i)\bDV[ .]HDR10Plus\b'
+
+          - key: DV-Digital
+            value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*(\bEAC3[ .](?:[57]\.1|2\.0)\b))' 
+          - key: HDR-Digital
+            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10\b)(?=.*\bAC3[ .](?:[57]\.1|2\.0)\b)'  
+          - key: Plus-Digital
+            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10Plus\b)(?=.*\bAC3[ .](?:[57]\.1|2\.0)\b)' 
+          - key: DV-HDR-Digital
+            value: '(?i)(?=.*\bDV[ .]HDR10\b)(?=.*\bAC3[ .](?:[57]\.1|2\.0)\b)'
+          - key: DV-Plus-Digital
+            value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*\bAC3[ .](?:[57]\.1|2\.0)\b)'
+
           - key: DV-DigitalPlus
-            value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*(\bEAC3[ .][57]\.1\b))'
+            value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*(\bEAC3[ .](?:[57]\.1|2\.0)\b))'         
           - key: HDR-DigitalPlus
-            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10\b)(?=.*\bEAC3[ .][57]\.1\b)'
+            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10\b)(?=.*\bEAC3[ .](?:[57]\.1|2\.0)\b)'           
           - key: Plus-DigitalPlus
-            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10Plus\b)(?=.*\bEAC3[ .][57]\.1\b)'
+            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10Plus\b)(?=.*\bEAC3[ .](?:[57]\.1|2\.0)\b)'
           - key: DV-HDR-DigitalPlus
-            value: '(?i)(?=.*\bDV[ .]HDR10\b)(?=.*\bEAC3[ .][57]\.1\b)'
+            value: '(?i)(?=.*\bDV[ .]HDR10\b)(?=.*\bEAC3[ .](?:[57]\.1|2\.0)\b)'
           - key: DV-Plus-DigitalPlus
-            value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*\bEAC3[ .][57]\.1\b)'
+            value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*\bEAC3[ .](?:[57]\.1|2\.0)\b)'
+
+          - key: DV-DTS
+            value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*\bDTS[ .][57]\.1\b)'
+          - key: HDR-DTS
+            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10\b)(?=.*\bDTS[ .][57]\.1\b)'
+          - key: Plus-DTS
+            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10Plus\b)(?=.*\bDTS[ .][57]\.1\b)'
+          - key: DV-HDR-DTS
+            value: '(?i)(?=.*\bDV[ .]HDR10\b)(?=.*\bDTS[ .][57]\.1\b)'
+          - key: DV-Plus-DTS
+            value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*\bDTS[ .][57]\.1\b)'
+
           - key: DV-DTS-HD
-            value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*\bDTS-HD[ .]MA[ .][57]\.1\b)'
+            value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][57]\.1\b)'
           - key: HDR-DTS-HD
-            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10\b)(?=.*\bDTS-HD[ .]MA[ .][57]\.1\b)'
+            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10\b)(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][57]\.1\b)'
           - key: Plus-DTS-HD
-            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10Plus\b)(?=.*\bDTS-HD[ .]MA[ .][57]\.1\b)'
+            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10Plus\b)(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][57]\.1\b)'
           - key: DV-HDR-DTS-HD
-            value: '(?i)(?=.*\bDV[ .]HDR10\b)(?=.*\bDTS-HD[ .]MA[ .][57]\.1\b)'
+            value: '(?i)(?=.*\bDV[ .]HDR10\b)(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][57]\.1\b)'
           - key: DV-Plus-DTS-HD
-            value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*\bDTS-HD[ .]MA[ .][57]\.1\b)'
+            value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][57]\.1\b)'
+
           - key: DV-DTS-X
             value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*(\bDTS-X[ .][57]\.1\b))'
           - key: HDR-DTS-X
@@ -204,6 +229,7 @@ templates:
             value: '(?i)(?=.*\bDV[ .]HDR10\b)(?=.*(\bDTS-X[ .][57]\.1\b))'
           - key: DV-Plus-DTS-X
             value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*(\bDTS-X[ .][57]\.1\b))'
+
           - key: DV-Atmos
             value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*\bEAC3[ .]Atmos[ .][57]\.1\b)'
           - key: HDR-Atmos
@@ -214,6 +240,7 @@ templates:
             value: '(?i)(?=.*\bDV[ .]HDR10\b)(?=.*\bEAC3[ .]Atmos[ .][57]\.1\b)'
           - key: DV-Plus-Atmos
             value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*\bEAC3[ .]Atmos[ .][57]\.1\b)'
+
           - key: DV-TrueHD
             value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*\bTrueHD[ .][57]\.1\b(?! Atmos))'
           - key: HDR-TrueHD
@@ -224,6 +251,7 @@ templates:
             value: '(?i)(?=.*\bDV[ .]HDR10\b)(?=.*\bTrueHD[ .][57]\.1\b(?! Atmos))'
           - key: DV-Plus-TrueHD
             value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*\bTrueHD[ .][57]\.1\b(?! Atmos))'
+
           - key: DV-TrueHD-Atmos
             value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*\bTrueHD[ .]Atmos[ .][57]\.1\b)'
           - key: HDR-TrueHD-Atmos
@@ -376,6 +404,7 @@ overlays:
   DV-Plus:
     variables: { key: DV-Plus, weight: 220, type: video }
     template: [ name: standard, name: codec_info ]
+  
   AAC:
     variables: { key: AAC, weight: 230, type: audio }
     template: [ name: standard, name: codec_info ]
@@ -412,20 +441,39 @@ overlays:
   TrueHD-Atmos:
     variables: { key: TrueHD-Atmos, weight: 300, type: audio }
     template: [ name: standard, name: codec_info ]
+  
+  DV-Digital:
+    variables: { key: DV-Digital, weight: 309, type: combined }
+    template: [ name: standard, name: codec_info ]
   DV-DigitalPlus:
     variables: { key: DV-DigitalPlus, weight: 310, type: combined }
+    template: [ name: standard, name: codec_info ]
+  HDR-Digital:
+    variables: { key: HDR-Digital, weight: 319, type: combined }
     template: [ name: standard, name: codec_info ]
   HDR-DigitalPlus:
     variables: { key: HDR-DigitalPlus, weight: 320, type: combined }
     template: [ name: standard, name: codec_info ]
+  Plus-Digital:
+    variables: { key: Plus-Digital, weight: 329, type: combined }
+    template: [ name: standard, name: codec_info ]
   Plus-DigitalPlus:
     variables: { key: Plus-DigitalPlus, weight: 330, type: combined }
+    template: [ name: standard, name: codec_info ]
+  DV-HDR-Digital:
+    variables: { key: DV-HDR-Digital, weight: 339, type: combined }
     template: [ name: standard, name: codec_info ]
   DV-HDR-DigitalPlus:
     variables: { key: DV-HDR-DigitalPlus, weight: 340, type: combined }
     template: [ name: standard, name: codec_info ]
+  DV-Plus-Digital:
+    variables: { key: DV-Plus-Digital, weight: 349, type: combined }
+    template: [ name: standard, name: codec_info ]
   DV-Plus-DigitalPlus:
     variables: { key: DV-Plus-DigitalPlus, weight: 350, type: combined }
+    template: [ name: standard, name: codec_info ]
+  DV-DTS:
+    variables: { key: DV-DTS, weight: 359, type: combined }
     template: [ name: standard, name: codec_info ]
   DV-DTS-HD:
     variables: { key: DV-DTS-HD, weight: 360, type: combined }
@@ -433,11 +481,17 @@ overlays:
   DV-DTS-X:
     variables: { key: DV-DTS-X, weight: 365, type: combined }
     template: [ name: standard, name: codec_info ]
+  HDR-DTS:
+    variables: { key: HDR-DTS, weight: 369, type: combined }
+    template: [ name: standard, name: codec_info ]
   HDR-DTS-HD:
     variables: { key: HDR-DTS-HD, weight: 370, type: combined }
     template: [ name: standard, name: codec_info ]
   HDR-DTS-X:
     variables: { key: HDR-DTS-X, weight: 375, type: combined }
+    template: [ name: standard, name: codec_info ]
+  Plus-DTS:
+    variables: { key: Plus-DTS, weight: 379, type: combined }
     template: [ name: standard, name: codec_info ]
   Plus-DTS-HD:
     variables: { key: Plus-DTS-HD, weight: 380, type: combined }
@@ -445,11 +499,17 @@ overlays:
   Plus-DTS-X:
     variables: { key: Plus-DTS-X, weight: 385, type: combined }
     template: [ name: standard, name: codec_info ]
+  DV-HDR-DTS:
+    variables: { key: DV-HDR-DTS, weight: 389, type: combined }
+    template: [ name: standard, name: codec_info ]
   DV-HDR-DTS-HD:
     variables: { key: DV-HDR-DTS-HD, weight: 390, type: combined }
     template: [ name: standard, name: codec_info ]
   DV-HDR-DTS-X:
     variables: { key: DV-HDR-DTS-X, weight: 395, type: combined }
+    template: [ name: standard, name: codec_info ]
+  DV-Plus-DTS:
+    variables: { key: DV-Plus-DTS, weight: 399, type: combined }
     template: [ name: standard, name: codec_info ]
   DV-Plus-DTS-HD:
     variables: { key: DV-Plus-DTS-HD, weight: 400, type: combined }

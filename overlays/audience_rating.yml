@@ -45,7 +45,7 @@ templates:
           - key: [audience_score_highest, audience_score_high, audience_score_mid, audience_score_mid_low, audience_score_low]
             value: text(<<audience_rating>>)
           - key: [audience_score_highest_none, audience_score_low_none]
-            value: text(- -)  
+            value: text(-)  
     optional:
       - file
       - builder_level
