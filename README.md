@@ -9,10 +9,12 @@
 
 - extended the resolutions with `720P` and `SD` (for sub 720p stuff)
 - added two more colors from [toovirals fork](https://github.com/tooviral/Kometa-custom-overlays)
+- added grey color and `-` for 10.0 ratings
 - added text for status of TV Shows (Airing, Ended, Canceled, Returning)
 - added flags from [Craftwork2720](https://github.com/Craftwork2720/pmm-rating-and-subtitle-flag-for-movies) inspired by [gravelfreemans fork](https://github.com/gravelfreeman/kometa-posters?tab=readme-ov-file) but changed it into two language support and display on the left and right of the rating. Resized the flags to fit it.
-- added additional audio codecs from [shivam183s fork](https://github.com/shivam183/Kometa/tree/local-main). Adjusted some of the images and implementeded it into the current regex.
-- added the generation of overlays for season posters and episodes. Episodes also with langugage flags besides the rating.
+- added additional audio codecs from [shivam183s fork](https://github.com/shivam183/Kometa/tree/local-main). Adjusted some of the images and implementeded it into the current regex. Aölso added some nieche detections like DTS-ES or DTS-HRA
+- extended the whole detection and images for combinatations of DV, HDR and HDR+ with old audio codecs
+- added the generation of overlays for season posters and episodes
 
 Changes are editied into sections below.
 
@@ -46,26 +48,25 @@ Seasons:<br>
 Episodes:<br>
 <img width="459" height="316" alt="image" src="https://github.com/user-attachments/assets/8b9ab32d-3177-4e29-8ca0-4301a956700f" />
 
-
-Original 
+Original
 ![Overlay Example](https://i.imgur.com/xgEv2Oe.png)
 
 ## Currently supported overlay images in all combinations
 
 | Resolutions | Editions            | Video Formats         | Audio Formats      |
 | -           | -                   | -                     | -                  |
-| 2160p (4K)  | Anniversary Edition | HDR                   | Dolby Digital Plus |
-| 1080p (HD)  | Collector's Edition | HDR10+                | DTS-HD MA          |
-| 720p (720P) | Director's Cut      | Dolby Vision          | DTS-X              |
-| 576p (SD)   | Extended Cut        | Dolby Vision + HDR    | Dolby Atmos        |
-| 480p (SD)   | Extended Edition    | Dolby Vision + HDR10+ | Dolby TrueHD       |
-| SD (SD)     | IMAX / (Enhanced)   |                       | Dolby TrueHD Atmos |
-|             | Minus Color         |                       | FLAC               |
-|             | Special Edition     |                       | AAC                |
-|             | Unrated Edition     |                       | OPUS               |
-|             |                     |                       | MP3                |
-|             |                     |                       | DTS 5.1            |
-|             | ... & more          |                       | Dolby Digital      |
+| SD (SD)     | Anniversary Edition | HDR                   | MP3                |
+| 480p (SD)   | Collector's Edition | HDR10+                | AAC                |
+| 576p (SD)   | Director's Cut      | Dolby Vision          | OPUS               |
+| 720p (720P) | Extended Cut        | Dolby Vision + HDR    | FLAC               |
+| 1080p (HD)  | Extended Edition    | Dolby Vision + HDR10+ | Dolby Digital      |
+| 2160p (4K)  | Final Cut           |                       | Dolby Digital Plus |
+|             | IMAX / (Enhanced)   |                       | DTS                |
+|             | Minus Color         |                       | DTS-HD             |
+|             | Open Matte          |                       | DTS-X              |
+|             | Special Edition     |                       | Dolby Atmos        |
+|             | Unrated Edition     |                       | Dolby TrueHD       |
+|             | ... and more        |                       | Dolby TrueHD Atmos |
 
 > [!NOTE]
 > Dolby Vision with HDR/HDR10+ fallback support is correctly detected and matched separately from exclusive DV, but only Dolby Vision will be visibly shown for those files. See examples at the bottom for an alternative option.
