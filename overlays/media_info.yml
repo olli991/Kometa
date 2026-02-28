@@ -159,9 +159,9 @@ templates:
           - key: DigitalPlus
             value: '(?i)\bEAC3[ .](?:[57]\.1|2\.0)\b'
           - key: DTS
-            value: '(?i)\bDTS[ .][57]\.1\b'
+            value: '(?i)\bDTS(?:-ES)?[ .](?:[57]\.1|6\.1)\b'
           - key: DTS-HD
-            value: '(?i)\bDTS-HD[ .](?:MA|HRA)[ .][57]\.1\b'
+            value: '(?i)\bDTS-HD[ .](?:MA|HRA)[ .][567]\.1\b'
           - key: DTS-X
             value: '(?i)\bDTS-X[ .][57]\.1\b'
           - key: TrueHD
@@ -198,26 +198,26 @@ templates:
             value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*\bEAC3[ .](?:[57]\.1|2\.0)\b)'
 
           - key: DV-DTS
-            value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*\bDTS[ .][57]\.1\b)'
+            value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*\bDTS(?:-ES)?[ .](?:[57]\.1|6\.1)\b)'
           - key: HDR-DTS
-            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10\b)(?=.*\bDTS[ .][57]\.1\b)'
+            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10\b)(?=.*\bDTS(?:-ES)?[ .](?:[57]\.1|6\.1)\b)'
           - key: Plus-DTS
-            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10Plus\b)(?=.*\bDTS[ .][57]\.1\b)'
+            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10Plus\b)(?=.*\bDTS(?:-ES)?[ .](?:[57]\.1|6\.1)\b)'
           - key: DV-HDR-DTS
-            value: '(?i)(?=.*\bDV[ .]HDR10\b)(?=.*\bDTS[ .][57]\.1\b)'
+            value: '(?i)(?=.*\bDV[ .]HDR10\b)(?=.*\bDTS(?:-ES)?[ .](?:[57]\.1|6\.1)\b)'
           - key: DV-Plus-DTS
-            value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*\bDTS[ .][57]\.1\b)'
+            value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*\bDTS(?:-ES)?[ .](?:[57]\.1|6\.1)\b)'
 
           - key: DV-DTS-HD
-            value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][57]\.1\b)'
+            value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][567]\.1\b)'
           - key: HDR-DTS-HD
-            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10\b)(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][57]\.1\b)'
+            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10\b)(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][567]\.1\b)'
           - key: Plus-DTS-HD
-            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10Plus\b)(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][57]\.1\b)'
+            value: '(?i)(?!.*(\bDV\b))(?=.*\bHDR10Plus\b)(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][567]\.1\b)'
           - key: DV-HDR-DTS-HD
-            value: '(?i)(?=.*\bDV[ .]HDR10\b)(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][57]\.1\b)'
+            value: '(?i)(?=.*\bDV[ .]HDR10\b)(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][567]\.1\b)'
           - key: DV-Plus-DTS-HD
-            value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][57]\.1\b)'
+            value: '(?i)(?=.*\bDV[ .]HDR10Plus\b)(?=.*\bDTS-HD[ .](?:MA|HRA)[ .][567]\.1\b)'
 
           - key: DV-DTS-X
             value: '(?i)(?=.*(\bDV\b(?!.*HDR)))(?=.*(\bDTS-X[ .][57]\.1\b))'
