@@ -20,7 +20,15 @@ Changes are editied into sections below.
 
 ## audience_rating.yml
 
-This file will create an overlay showing the current audience rating value in PLEX. Ratings of 9 or higher are dark green, 7.5 or higher are light green, 6.5 or higher are yellow,  5 and or higher are orange and anything lower will be red.
+This file will create an overlay showing the current audience rating value in PLEX. 
+- Ratings of 10.0 will be shown on a grey background and with `-`
+- Ratings of 9.0 or higher are dark green
+- Ratings of 7.5 or higher are light green
+- Ratings of 6.5 or higher are yellow
+- Ratings of 5.0 or higher are orange
+- anything lower will be red
+
+I wanted to implement a grey background for "No rating" but `0` is not present on not rated episodes so there will be a blank space on non rated items so far... if there is a soluten let me know :-) 
 
 ## media_info.yml
 
