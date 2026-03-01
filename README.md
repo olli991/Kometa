@@ -12,9 +12,9 @@
 - added grey color and `-` for 10.0 ratings
 - added text for status of TV Shows (Airing, Ended, Canceled, Returning)
 - added flags from [Craftwork2720](https://github.com/Craftwork2720/pmm-rating-and-subtitle-flag-for-movies) inspired by [gravelfreemans fork](https://github.com/gravelfreeman/kometa-posters?tab=readme-ov-file) but changed it into two language support and display on the left and right of the rating. Resized the flags to fit it.
-- added additional audio codecs from [shivam183s fork](https://github.com/shivam183/Kometa/tree/local-main). Adjusted some of the images and implementeded it into the current regex. Also added some rare format detection like DTS-ES or DTS-HRA
+- added additional audio codecs from [shivam183s fork](https://github.com/shivam183/Kometa/tree/local-main). Adjusted some of the images. Added regex detection for it. Also added some rare format detection like DTS-ES or DTS-HRA
 - extended the whole detection and images for combinations of DV, HDR and HDR+ with old audio codecs
-- added the generation of overlays for season posters and episodes
+- added the info below to also create overlays for season posters and episodes
 
 Changes are editied into sections below.
 
